@@ -1,0 +1,11 @@
+import sqlite3
+
+con = sqlite3.connect("studentfinal1.db")
+print("Database opened successfully")
+
+con.execute(
+    "create table student1 (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL,stu_m1 int,stu_m2 int,stu_m3 int ,total int,avg float,grade text)")
+
+print("Table created successfully")
+
+con.close()
