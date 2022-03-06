@@ -131,7 +131,21 @@ def view4():
     con.row_factory = sqlite3.Row
     cur = con.cursor()
     cur.execute("select * from division")
-    rows = cur.fetchall()
+    rows = cur.fetchall()import sqlite3
+
+con = sqlite3.connect("employee1.db")
+print("Database opened successfully")
+
+con.execute("create table if not exists addtable(Num1 integer,Num2 integer,Sum integer)")
+con.execute("create table if not exists sub(Num1 integer,Num2 integer,Sum integer)")
+con.execute("create table if not exists multiply(Num1 integer,Num2 integer,Sum integer)")
+con.execute("create table if not exists division(Num1 integer,Num2 integer,Sum integer)")
+
+
+
+print("Table created successfully")
+
+con.close()
     return render_template("view.html", rows=rows)
 
 
@@ -140,3 +154,21 @@ def view4():
 
 if __name__ == "__main__":
     app.run(debug=True,port=9977)
+    
+#table creat Sql
+
+import sqlite3
+
+con = sqlite3.connect("employee1.db")
+print("Database opened successfully")
+
+con.execute("create table if not exists addtable(Num1 integer,Num2 integer,Sum integer)")
+con.execute("create table if not exists sub(Num1 integer,Num2 integer,Sum integer)")
+con.execute("create table if not exists multiply(Num1 integer,Num2 integer,Sum integer)")
+con.execute("create table if not exists division(Num1 integer,Num2 integer,Sum integer)")
+
+
+
+print("Table created successfully")
+
+con.close()
